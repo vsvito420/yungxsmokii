@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>yungxsmokii — Linktree</title>
+  <meta name="description" content="Offizielle Linkseite von yungxsmokii mit SoundCloud und Social Links." />
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=cabinet-grotesk@700,800&display=swap" rel="stylesheet">
+  <style>
+    :root, [data-theme="light"] {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem; --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem; --space-16: 4rem;
+      --radius-sm: 0.375rem; --radius-md: 0.75rem; --radius-lg: 1.25rem; --radius-xl: 1.75rem; --radius-full: 9999px;
+      --color-bg: #f6f2ea;
+      --color-surface: #fdfaf6;
+      --color-surface-2: #f0e7db;
+      --color-text: #1c1712;
+      --color-text-muted: #6e665f;
+      --color-border: rgba(28,23,18,0.12);
+      --color-primary: #1f7a78;
+      --color-primary-hover: #145a58;
+      --color-chip: rgba(31,122,120,0.12);
+      --shadow-lg: 0 20px 50px rgba(10, 8, 6, 0.18);
+      --font-body: 'Satoshi', system-ui, sans-serif;
+      --font-display: 'Cabinet Grotesk', 'Satoshi', system-ui, sans-serif;
+    }
+    [data-theme="dark"] {
+      --color-bg: #0f0b11;
+      --color-surface: #17111b;
+      --color-surface-2: #24172a;
+      --color-text: #f5efe7;
+      --color-text-muted: #b1a7b7;
+      --color-border: rgba(245,239,231,0.12);
+      --color-primary: #79d0ca;
+      --color-primary-hover: #99e5df;
+      --color-chip: rgba(121,208,202,0.14);
+      --shadow-lg: 0 24px 70px rgba(0,0,0,0.45);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{-webkit-text-size-adjust:none;text-size-adjust:none;scroll-behavior:smooth}
+    body{
+      min-height:100dvh;
+      font-family:var(--font-body);
+      font-size:var(--text-base);
+      color:var(--color-text);
+      background:
+        radial-gradient(circle at top, rgba(121,208,202,0.16), transparent 28%),
+        radial-gradient(circle at bottom left, rgba(160,110,255,0.12), transparent 26%),
+        var(--color-bg);
+      line-height:1.6;
+      padding:var(--space-4);
+      display:flex;
+      justify-content:center;
+    }
+    img,iframe,svg{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .page{
+      width:min(100%, 34rem);
+      display:grid;
+      gap:var(--space-5);
+      align-self:center;
+      padding-block:var(--space-8);
+    }
+    .card{
+      background:linear-gradient(180deg, color-mix(in srgb, var(--color-surface) 92%, transparent), color-mix(in srgb, var(--color-surface-2) 96%, transparent));
+      border:1px solid var(--color-border);
+      border-radius:var(--radius-xl);
+      box-shadow:var(--shadow-lg);
+      backdrop-filter:blur(12px);
+    }
+    .hero{
+      overflow:hidden;
+      position:relative;
+    }
+    .hero-media{
+      aspect-ratio:1/1;
+      overflow:hidden;
+    }
+    .hero-media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+    }
+    .hero-body{
+      padding:var(--space-6);
+      display:grid;
+      gap:var(--space-4);
+    }
+    .badge-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:var(--space-3);
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:var(--space-2);
+      min-height:44px;
+      padding:0 var(--space-4);
+      border-radius:var(--radius-full);
+      background:var(--color-chip);
+      border:1px solid var(--color-border);
+      font-size:var(--text-sm);
+      color:var(--color-primary);
+    }
+    .logo{
+      width:42px;height:42px;color:var(--color-primary);
+    }
+    h1{
+      font-family:var(--font-display);
+      font-size:var(--text-2xl);
+      line-height:0.95;
+      letter-spacing:-0.03em;
+    }
+    .subtitle{color:var(--color-text-muted);max-width:28ch}
+    .links{display:grid;gap:var(--space-3)}
+    .link-btn{
+      min-height:56px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:var(--space-3);
+      padding:var(--space-4) var(--space-5);
+      background:color-mix(in srgb, var(--color-surface) 86%, transparent);
+      border:1px solid var(--color-border);
+      border-radius:var(--radius-lg);
+      font-weight:700;
+      transition:transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+    .link-btn:hover,.link-btn:focus-visible{transform:translateY(-2px);border-color:color-mix(in srgb, var(--color-primary) 48%, var(--color-border));background:color-mix(in srgb, var(--color-surface-2) 86%, transparent)}
+    .link-meta{font-size:var(--text-sm);color:var(--color-text-muted);font-weight:500}
+    .section{
+      padding:var(--space-6);
+      display:grid;
+      gap:var(--space-4);
+    }
+    .section h2{
+      font-family:var(--font-display);
+      font-size:var(--text-xl);
+      letter-spacing:-0.02em;
+    }
+    .gallery{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:var(--space-3);
+      align-items:stretch;
+    }
+    .gallery img{
+      width:100%;
+      height:100%;
+      min-height:180px;
+      object-fit:cover;
+      border-radius:calc(var(--radius-lg) - var(--space-1));
+      border:1px solid var(--color-border);
+    }
+    .embed-wrap{
+      border-radius:calc(var(--radius-lg) - var(--space-1));
+      overflow:hidden;
+      border:1px solid var(--color-border);
+      background:#111;
+    }
+    .theme-toggle{
+      position:absolute;
+      top:var(--space-4);
+      right:var(--space-4);
+      width:48px;height:48px;border-radius:50%;
+      display:grid;place-items:center;
+      background:rgba(15,11,17,0.55);
+      color:#fff;border:1px solid rgba(255,255,255,0.15);
+      backdrop-filter:blur(10px);
+      cursor:pointer;
+    }
+    .footer{
+      text-align:center;
+      color:var(--color-text-muted);
+      font-size:var(--text-sm);
+      padding-bottom:var(--space-4);
+    }
+    .skip-link{position:absolute;left:-999px;top:0}
+    .skip-link:focus{left:var(--space-4);top:var(--space-4);background:var(--color-surface);padding:var(--space-3);border-radius:var(--radius-md);z-index:20}
+    @media (max-width: 560px){
+      body{padding:var(--space-3)}
+      .hero-body,.section{padding:var(--space-5)}
+      .gallery{grid-template-columns:1fr}
+      .badge-row{flex-direction:column-reverse;align-items:flex-start}
+    }
+    @media (prefers-reduced-motion: reduce){
+      *{scroll-behavior:auto!important;transition:none!important}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#content">Zum Inhalt springen</a>
+  <main class="page" id="content">
+    <section class="card hero">
+      <div class="hero-media">
+        <img src="./assets/artist-main.jpg" alt="Portrait von yungxsmokii" width="1200" height="1200" />
+      </div>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Zu hellem Modus wechseln">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <div class="hero-body">
+        <div class="badge-row">
+          <span class="chip">Official links</span>
+          <svg class="logo" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" aria-label="yungxsmokii Logo">
+            <path d="M14 17 32 47 50 17" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M24 34h16" stroke-linecap="round"/>
+            <circle cx="32" cy="32" r="26" opacity="0.22"/>
+          </svg>
+        </div>
+        <div>
+          <h1>yungxsmokii</h1>
+          <p class="subtitle">Rap &bull; Music &bull; Links</p>
+        </div>
+        <nav class="links" aria-label="Artist Links">
+          <a class="link-btn" href="https://m.soundcloud.com/user-634387808" target="_blank" rel="noopener noreferrer">
+            <span>SoundCloud</span>
+            <span class="link-meta">Jetzt h&ouml;ren &rarr;</span>
+          </a>
+          <a class="link-btn" href="mailto:booking@yungxsmokii.com">
+            <span>Booking / Contact</span>
+            <span class="link-meta">E-Mail</span>
+          </a>
+          <a class="link-btn" href="#sound">
+            <span>Player ansehen</span>
+            <span class="link-meta">Embed &darr;</span>
+          </a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="card section" aria-labelledby="visuals-title">
+      <h2 id="visuals-title">Visuals</h2>
+      <div class="gallery">
+        <img src="./assets/artist-secondary.jpg" alt="Künstler in Hoodie in einer urbanen Graffiti-Location" width="800" height="800" loading="lazy" />
+        <img src="./assets/artist-main.jpg" alt="Promo-Motiv von yungxsmokii" width="1200" height="1200" loading="lazy" />
+      </div>
+    </section>
+
+    <section class="card section" id="sound" aria-labelledby="sound-title">
+      <h2 id="sound-title">SoundCloud</h2>
+      <div class="embed-wrap">
+        <iframe
+          title="SoundCloud Player von yungxsmokii"
+          width="100%"
+          height="352"
+          scrolling="no"
+          frameborder="no"
+          allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/user-634387808&color=%2379d0ca&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+        </iframe>
+      </div>
+    </section>
+
+    <p class="footer">&copy; 2026 yungxsmokii &mdash; All rights reserved</p>
+  </main>
+
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const toggle = document.querySelector('[data-theme-toggle]');
+      let current = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      root.setAttribute('data-theme', current);
+      const renderIcon = () => {
+        toggle.setAttribute('aria-label', current === 'dark' ? 'Zu hellem Modus wechseln' : 'Zu dunklem Modus wechseln');
+        toggle.innerHTML = current === 'dark'
+          ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'
+          : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
+      };
+      renderIcon();
+      toggle.addEventListener('click', () => {
+        current = current === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', current);
+        renderIcon();
+      });
+    })();
+  </script>
+</body>
+</html>
